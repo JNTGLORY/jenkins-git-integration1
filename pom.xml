@@ -17,6 +17,9 @@
   </dependencies>
   <build>
     <finalName>jenkins-git-integration</finalName>
+  </build>
+  <build>
+    <finalName>jenkins-git-integration</finalName>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -24,6 +27,5 @@
             <version>3.4.0</version>
         </plugin>
     </plugins>
-  </build>
+</build>
 </project>
-
