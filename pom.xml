@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
-    <!-- Project information -->
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.amitverma</groupId>
     <artifactId>jenkins-git-integration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -12,18 +12,30 @@
 
     <name>Jenkins Git Integration</name>
     <description>A simple Maven project for Jenkins-Git integration</description>
-    
+
     <!-- Parent -->
     <parent>
         <groupId>org.springframework</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.5</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <!-- Repositories section to resolve dependencies -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>spring-repo</id>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+    </repositories>
 
     <!-- Dependencies -->
     <dependencies>
@@ -31,23 +43,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </dependency>
-
-        <!-- Other dependencies as needed -->
     </dependencies>
 
     <!-- Build configuration -->
     <build>
         <plugins>
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -58,8 +59,14 @@
                 </configuration>
             </plugin>
 
-            <!-- Additional plugins -->
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.5</version>
+            </plugin>
         </plugins>
     </build>
+
 </project>
 
